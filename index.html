@@ -19,31 +19,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-green-50">
     <header>
-        <nav class="flex justify-between pt-2">
-             <div id="logo-name" class="left-nav logo flex items-center gap-2">
-                <img src="assets/logo.png" alt="" class="h-[20px]">
-                <h4 class="text-green-800 font-extrabold text-xs">Emergency<br>Service</h4>
+        <nav class="flex justify-between md:w-[97vw] md:mx-auto py-2">
+             <div id="logo-name" class="left-nav logo flex items-center gap-2 ">
+                <img src="assets/logo.png" alt="" class="h-[20px] md:h-12">
+                <h4 class="text-green-800 font-extrabold text-xs md:text-xl">Emergency<br>Service</h4>
              </div>
              <div class="right-nav flex gap-3">
-                <div class="flex items-center gap-2 rounded-lg w-14 justify-center bg-[#41ff6b42]">
-                    <p class="font-semibold text-xs">0</p>
-                    <img src="assets/heart.png" alt="" class="h-3">
+                <div class="flex items-center gap-2 rounded-lg md:rounded-[50px] w-14 md:w-28 justify-center bg-[#41ff6b42]">
+                    <p class="font-semibold text-xs md:text-lg">0</p>
+                    <img src="assets/heart.png" alt="" class="h-3 md:h-5">
                 </div>
-                <div class="flex items-center gap-2 rounded-lg w-14 justify-center bg-[#41ff6b42]">
-                    <p class="font-semibold text-xs">100</p>
-                    <img src="assets/coin.png" alt="" class="h-3">
+                <div class="flex items-center gap-2 rounded-lg md:rounded-[50px] w-14 md:w-28 justify-center bg-[#41ff6b42]">
+                    <p class="font-semibold text-xs md:text-lg">100</p>
+                    <img src="assets/coin.png" alt="" class="h-3 md:h-5">
                 </div>
-                <div class="flex items-center gap-1 bg-[#00A63E] rounded-lg w-14 justify-center">
-                    <p class="font-semibold text-white text-xs">0</p>
-                    <p class="font-semibold text-white text-xs">Copy</p>
+                <div class="flex items-center gap-1 bg-[#00A63E] rounded-lg md:rounded-[50px] w-14 md:w-28 justify-center">
+                    <p class="font-semibold text-white text-xs md:text-lg">0</p>
+                    <p class="font-semibold text-white text-xs md:text-lg">Copy</p>
                 </div>
              </div>
         </nav>
     </header>
     <main>
-
+        <section class="hero bg-gradient-to-r from-green-900 via-green-500 to-green-900">
+            <div class="hero-content flex-col">
+                <img src="assets/logo-dark.png" alt="" class="h-20">
+                <h3 class="font-bold text-white text-2xl md:text-6xl">Emergency Service Directory</h3>
+                <p class="font-normal text-white text-[10px] text-center">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+            </div>
+        </section>
     </main>
 
 
