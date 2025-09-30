@@ -36,7 +36,8 @@ for(const heart_icon of heart_icons)
 }
 )}
       // Call button functionality
-const callHistory=[];
+
+const callHistory=[]; //call history arry is here to store the callLog;
 const calls= document.getElementsByClassName("Call");
 for(const call of calls)
 {
@@ -46,9 +47,9 @@ for(const call of calls)
   const name= this.getAttribute("data-name");
   const num= this.getAttribute("data-num");
   const callPayment= 20;
-  console.log(callPayment);
+  //console.log(callPayment);
   const defaultCoin=getIntValue("default-coin");
-  console.log(defaultCoin);
+  //console.log(defaultCoin);
   if(defaultCoin===20||defaultCoin<20)
   {
     alert("You don't have sufficient balance.Please recharge!");
@@ -56,14 +57,15 @@ for(const call of calls)
   }
   alert(`Calling to ${name} at ${num}`);
   const afterCallCoin= defaultCoin-callPayment;
-  console.log(afterCallCoin);
+  //console.log(afterCallCoin);
   document.getElementById("default-coin").innerText = afterCallCoin;
 
   const history={
     title:name,
     subtitle:num,
     time:new Date().toLocaleTimeString()
-  }
+  }        
+          //from here the call history functionaliy code starts;
   callHistory.push(history);
   //console.log(callHistory);
   const callLog=document.getElementById("call_history");
@@ -76,7 +78,14 @@ for(const call of calls)
                     </div>
                     <p class="text-xl">${history.time}</p>
                 </div>`
-      
-                callLog.appendChild(div);
+      callLog.appendChild(div);
 }
 )}
+        // call history clear button functionality
+const remove=document.getElementById("clear");
+remove.addEventListener("click",function()
+{
+  console.log("event cleared!");
+  document.getElementById("call_history").innerHTML="";
+})
+        // copy button functionality 
