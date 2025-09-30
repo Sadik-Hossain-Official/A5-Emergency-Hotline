@@ -1,18 +1,19 @@
 // Functions for re-use 
+//  function for innerText
 function getInnertext(t)
 {
     const T = document.getElementById(t).innerText;
     return T;
 }
-
+// function for int value 
 function getIntValue(iv)
 {
     const IntValue= parseInt(document.getElementById(iv).innerText);
     return IntValue;
 }
 
-
 // main functionality 
+        // Navbar heart icon functionality
 const heart_icons=document.getElementsByClassName("add-fav");
 for(const heart_icon of heart_icons)
 {
@@ -31,7 +32,30 @@ for(const heart_icon of heart_icons)
       currentFavNum -= 1;
     }
     document.getElementById("fav-count").innerText = currentFavNum;
-
     console.log(currentFavNum);
+}
+)}
+      // Call button functionality
+const calls= document.getElementsByClassName("Call");
+for(const call of calls)
+{
+  call.addEventListener("click",function()
+{
+  console.log("button clicked!")
+  const name= this.getAttribute("data-name");
+  const num= this.getAttribute("data-num");
+  const callPayment= 20;
+  console.log(callPayment);
+  const defaultCoin=getIntValue("default-coin");
+  console.log(defaultCoin);
+  if(defaultCoin===20||defaultCoin<20)
+  {
+    alert("You don't have sufficient balance.Please recharge!");
+    return;
+  }
+  alert(`Calling to ${name} at ${num}`);
+  const afterCallCoin= defaultCoin-callPayment;
+  console.log(afterCallCoin);
+  document.getElementById("default-coin").innerText = afterCallCoin;
 }
 )}
