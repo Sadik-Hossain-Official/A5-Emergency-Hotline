@@ -89,3 +89,16 @@ remove.addEventListener("click",function()
   document.getElementById("call_history").innerHTML="";
 })
         // copy button functionality 
+const copies=document.getElementsByClassName("copy");
+for(const copy of copies)
+{
+  copy.addEventListener("click",function()
+{
+  alert("copied!");
+  const copied=getIntValue("copy-count");
+  //console.log(copied);
+  const copyNum= copied+1;
+  //console.log(copyNum);
+  document.getElementById("copy-count").innerText=copyNum;
+})
+}
