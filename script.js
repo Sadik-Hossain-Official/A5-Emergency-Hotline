@@ -36,6 +36,7 @@ for(const heart_icon of heart_icons)
 }
 )}
       // Call button functionality
+const callHistory=[];
 const calls= document.getElementsByClassName("Call");
 for(const call of calls)
 {
@@ -57,5 +58,25 @@ for(const call of calls)
   const afterCallCoin= defaultCoin-callPayment;
   console.log(afterCallCoin);
   document.getElementById("default-coin").innerText = afterCallCoin;
+
+  const history={
+    title:name,
+    subtitle:num,
+    time:new Date().toLocaleTimeString()
+  }
+  callHistory.push(history);
+  //console.log(callHistory);
+  const callLog=document.getElementById("call_history");
+  //console.log(callLog);
+  const div= document.createElement("div");
+  div.innerHTML=`<div class="bg-gray-100 flex items-center justify-between p-2 my-5 rounded-lg">
+                    <div class="">
+                        <h5 class="font-bold text-lg">${history.title}</h5>
+                        <p class="font-semibold text-xl">${history.subtitle}</p>
+                    </div>
+                    <p class="text-xl">${history.time}</p>
+                </div>`
+      
+                callLog.appendChild(div);
 }
 )}
