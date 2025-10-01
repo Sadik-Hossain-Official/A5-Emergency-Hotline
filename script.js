@@ -94,11 +94,15 @@ for(const copy of copies)
 {
   copy.addEventListener("click",function()
 {
-  alert("copied!");
   const copied=getIntValue("copy-count");
   //console.log(copied);
   const copyNum= copied+1;
   //console.log(copyNum);
   document.getElementById("copy-count").innerText=copyNum;
+      //  copy to clipboard process 
+    const copyText =this.getAttribute("data-num");
+    // console.log(copyText);
+    // console.log(navigator.clipboard.writeText(copyText).then(function(){console.log(copyText)}));
+    navigator.clipboard.writeText(copyText).then(function(){alert(copyText+" Copied!")});
 })
 }
